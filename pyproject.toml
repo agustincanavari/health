@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "health"
+version = "0.1.0"
+description = "Personal health tools"
+authors = ["Agustin Canavari <24359306+agustincanavari@users.noreply.github.com>"]
+packages = [{ include = "health" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydicom = "^2.4"
+numpy = ">=1.26,<3.0"
+matplotlib = "^3.9"
+reportlab = "^4.2"
+pylibjpeg = "^2.1.0"
+pylibjpeg-libjpeg = "^2.4.0"
+pylibjpeg-openjpeg = "^2.5.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+ruff = "^0.6"
+
+[tool.poetry.scripts]
+dicom-to-pdf = "health.scripts.dicom_to_pdf:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
